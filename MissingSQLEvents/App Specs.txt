@@ -1,0 +1,42 @@
+﻿========================
+Missing SQL Events
+========================
+The app is used to add and remove registry entries that are specific to SQL Server events in the Application Event log.
+If you are reviewing log files (.evtx) from a remote server the event viewer will not recognize the events. 
+
+
+========================
+Requirements
+========================
+.net 4.0
+SQL instance installed on the local machine
+
+
+========================
+Add
+========================
+customer input: sql version number, instance name
+
+1. verify instance name is valid
+2. check registry for sql installations
+-> if no installations give error "Sorry you need to have at least 1 SQL instance installed on your system to use this tool"
+-> else 
+
+3. find most recent version of SQL installed
+4. add registry entries 
+5. give pop up confirmation "Registry entries have been added"
+
+*optional features
+logging
+option to create regkey to automatically remove this entry
+
+========================
+Remove
+========================
+customer input: instance name
+
+1. check registry for sql installations with instance name
+-> if instance exists give error "Please manually uninstall SQL to remove this registry entry"
+-> else
+2. remove sql instance subkey
+3. give pop-up confirmation "Registry entries have been removed"
